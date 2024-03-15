@@ -1,0 +1,152 @@
+@page "/"
+@page "/view_1"
+@using Northwind
+@using Models.Northwind
+@using Financial
+@using Models.Financial
+@inject INorthwindService NorthwindService
+@inject IFinancialService FinancialService
+
+<div class="column-layout view-1-container">
+    <div class="row-layout group">
+        <div class="column-layout group_1">
+            <IgbGrid Data="@_northwindCustomers" PrimaryKey="CustomerID" DisplayDensity="DisplayDensity.Cosy" AllowFiltering="true" FilterMode="FilterMode.ExcelStyleFilter" AutoGenerate="false" class="ig-typography grid" view_1-scope>
+                <IgbColumn Field="CustomerID" DataType="GridColumnDataType.String" Header="customerID" Sortable="true" Selectable="false"></IgbColumn>
+                <IgbColumn Field="CompanyName" DataType="GridColumnDataType.String" Header="companyName" Sortable="true" Selectable="false"></IgbColumn>
+                <IgbColumn Field="ContactName" DataType="GridColumnDataType.String" Header="contactName" Sortable="true" Selectable="false"></IgbColumn>
+                <IgbColumn Field="ContactTitle" DataType="GridColumnDataType.String" Header="contactTitle" Sortable="true" Selectable="false"></IgbColumn>
+                <IgbColumn Field="Address.Street" DataType="GridColumnDataType.String" Header="address street" Sortable="true" Selectable="false"></IgbColumn>
+                <IgbColumn Field="Address.City" DataType="GridColumnDataType.String" Header="address city" Sortable="true" Selectable="false"></IgbColumn>
+                <IgbColumn Field="Address.Region" DataType="GridColumnDataType.String" Header="address region" Sortable="true" Selectable="false"></IgbColumn>
+                <IgbColumn Field="Address.PostalCode" DataType="GridColumnDataType.String" Header="address postalCode" Sortable="true" Selectable="false"></IgbColumn>
+                <IgbColumn Field="Address.Country" DataType="GridColumnDataType.String" Header="address country" Sortable="true" Selectable="false"></IgbColumn>
+                <IgbColumn Field="Address.Phone" DataType="GridColumnDataType.String" Header="address phone" Sortable="true" Selectable="false"></IgbColumn>
+            </IgbGrid>
+        </div>
+        <div class="column-layout group_2">
+            <IgbList class="list" view_1-scope>
+                <IgbListItem>
+                    <IgbAvatar slot="start" Shape="AvatarShape.Circle">
+                        <span class="material-icons">
+                            person
+                        </span>
+                    </IgbAvatar>
+                    <div slot="title">Title goes here</div>
+                    <div slot="subtitle">Subtitle...</div>
+                    <span slot="end" class="material-icons icon">
+                        star
+                    </span>
+                </IgbListItem>
+            </IgbList>
+            <IgbList class="list" view_1-scope>
+                <IgbListItem>
+                    <IgbAvatar slot="start" Shape="AvatarShape.Circle">
+                        <span class="material-icons">
+                            person
+                        </span>
+                    </IgbAvatar>
+                    <div slot="title">Title goes here</div>
+                    <div slot="subtitle">Subtitle...</div>
+                    <span slot="end" class="material-icons icon">
+                        star
+                    </span>
+                </IgbListItem>
+            </IgbList>
+            <IgbList class="list" view_1-scope>
+                <IgbListItem>
+                    <IgbAvatar slot="start" Shape="AvatarShape.Circle">
+                        <span class="material-icons">
+                            person
+                        </span>
+                    </IgbAvatar>
+                    <div slot="title">Title goes here</div>
+                    <div slot="subtitle">Subtitle...</div>
+                    <span slot="end" class="material-icons icon">
+                        star
+                    </span>
+                </IgbListItem>
+            </IgbList>
+            <IgbList class="list" view_1-scope>
+                <IgbListItem>
+                    <IgbAvatar slot="start" Shape="AvatarShape.Circle">
+                        <span class="material-icons">
+                            person
+                        </span>
+                    </IgbAvatar>
+                    <div slot="title">Title goes here</div>
+                    <div slot="subtitle">Subtitle...</div>
+                    <span slot="end" class="material-icons icon">
+                        star
+                    </span>
+                </IgbListItem>
+            </IgbList>
+            <IgbList class="list" view_1-scope>
+                <IgbListItem>
+                    <IgbAvatar slot="start" Shape="AvatarShape.Circle">
+                        <span class="material-icons">
+                            person
+                        </span>
+                    </IgbAvatar>
+                    <div slot="title">Title goes here</div>
+                    <div slot="subtitle">Subtitle...</div>
+                    <span slot="end" class="material-icons icon">
+                        star
+                    </span>
+                </IgbListItem>
+            </IgbList>
+            <IgbList class="list" view_1-scope>
+                <IgbListItem>
+                    <IgbAvatar slot="start" Shape="AvatarShape.Circle">
+                        <span class="material-icons">
+                            person
+                        </span>
+                    </IgbAvatar>
+                    <div slot="title">Title goes here</div>
+                    <div slot="subtitle">Subtitle...</div>
+                    <span slot="end" class="material-icons icon">
+                        star
+                    </span>
+                </IgbListItem>
+            </IgbList>
+            <IgbList class="list" view_1-scope>
+                <IgbListItem>
+                    <IgbAvatar slot="start" Shape="AvatarShape.Circle">
+                        <span class="material-icons">
+                            person
+                        </span>
+                    </IgbAvatar>
+                    <div slot="title">Title goes here</div>
+                    <div slot="subtitle">Subtitle...</div>
+                    <span slot="end" class="material-icons icon">
+                        star
+                    </span>
+                </IgbListItem>
+            </IgbList>
+        </div>
+    </div>
+    <div class="row-layout group">
+        <div class="column-layout group_1">
+            <IgbFinancialChart DataSource="@_financialStocks" class="chart" view_1-scope></IgbFinancialChart>
+        </div>
+        <div class="column-layout group_1">
+            <IgbCategoryChart DataSource="@_financialBoxOfficeRevenue" ComputedPlotAreaMarginMode="ComputedPlotAreaMarginMode.Series" class="chart" view_1-scope></IgbCategoryChart>
+        </div>
+        <div class="column-layout group_1">
+            <IgbCalendar HideHeader="false" class="calendar" view_1-scope></IgbCalendar>
+        </div>
+    </div>
+</div>
+
+@code {
+    private List<CustomersType> _northwindCustomers = new();
+    private List<StocksType> _financialStocks = new();
+    private List<BoxOfficeRevenueType> _financialBoxOfficeRevenue = new();
+
+    protected override async Task OnInitializedAsync()
+    {
+        _northwindCustomers = await NorthwindService.GetCustomers();
+        _financialStocks = await FinancialService.GetStocks();
+        _financialBoxOfficeRevenue = await FinancialService.GetBoxOfficeRevenue();
+        await base.OnInitializedAsync();
+    }
+}
