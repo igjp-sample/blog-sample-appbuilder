@@ -18,7 +18,7 @@ namespace TestIgApplication
 				typeof(IgbGridModule),
 				typeof(IgbListModule),
 				typeof(IgbAvatarModule),
-				typeof(IgbFinancialChartModule),
+				typeof(IgbPieChartModule),
 				typeof(IgbCategoryChartModule),
 				typeof(IgbCalendarModule));
 			ctx.Services.AddScoped<INorthwindService>(sp => new MockNorthwindService());

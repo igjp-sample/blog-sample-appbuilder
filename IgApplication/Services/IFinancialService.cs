@@ -4,7 +4,7 @@ namespace IgApplication.Financial
 {
     public interface IFinancialService
     {
-        Task<List<StocksType>> GetStocks();
         Task<List<BoxOfficeRevenueType>> GetBoxOfficeRevenue();
+        Task<List<StocksType>> GetStocks();
     }
 }

@@ -126,10 +126,10 @@
     </div>
     <div class="row-layout group">
         <div class="column-layout group_1">
-            <IgbFinancialChart DataSource="@_financialStocks" class="chart" view_1-scope></IgbFinancialChart>
+            <IgbPieChart DataSource="@_financialBoxOfficeRevenue" LabelMemberPath="Franchise" ValueMemberPath="TotalWorldBoxOfficeRevenue" class="pie-chart" view_1-scope></IgbPieChart>
         </div>
         <div class="column-layout group_1">
-            <IgbCategoryChart DataSource="@_financialBoxOfficeRevenue" ComputedPlotAreaMarginMode="ComputedPlotAreaMarginMode.Series" class="chart" view_1-scope></IgbCategoryChart>
+            <IgbCategoryChart DataSource="@_financialBoxOfficeRevenue" ComputedPlotAreaMarginMode="ComputedPlotAreaMarginMode.Series" class="category-chart" view_1-scope></IgbCategoryChart>
         </div>
         <div class="column-layout group_1">
             <IgbCalendar HideHeader="false" class="calendar" view_1-scope></IgbCalendar>
@@ -139,13 +139,11 @@
 
 @code {
     private List<CustomersType> _northwindCustomers = new();
-    private List<StocksType> _financialStocks = new();
     private List<BoxOfficeRevenueType> _financialBoxOfficeRevenue = new();
 
     protected override async Task OnInitializedAsync()
     {
         _northwindCustomers = await NorthwindService.GetCustomers();
-        _financialStocks = await FinancialService.GetStocks();
         _financialBoxOfficeRevenue = await FinancialService.GetBoxOfficeRevenue();
         await base.OnInitializedAsync();
     }

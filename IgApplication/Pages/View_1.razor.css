@@ -64,7 +64,13 @@
     min-width: max-content;
     max-width: 449px;
 }
-.chart {
+.pie-chart {
+    min-width: 250px;
+    min-height: 250px;
+    flex-grow: 1;
+    flex-basis: 0;
+}
+.category-chart {
     min-width: 400px;
     min-height: 300px;
     flex-grow: 1;
