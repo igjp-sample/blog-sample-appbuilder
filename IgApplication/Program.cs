@@ -27,9 +27,10 @@ void RegisterIgniteUI(IServiceCollection services)
         typeof(IgbGridModule),
         typeof(IgbListModule),
         typeof(IgbAvatarModule),
-        typeof(IgbFinancialChartModule),
+        typeof(IgbPieChartModule),
         typeof(IgbCategoryChartModule),
-        typeof(IgbCalendarModule)
+        typeof(IgbCalendarModule),
+        typeof(IgbFinancialChartModule)
     );
 }
 
